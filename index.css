@@ -1,0 +1,131 @@
+:root {
+  --bg: #fffaf0;
+  --beam0: #deb887;
+  --beam1: #f4a460;
+  --beam-border: #8b5a2b;
+  --support: #c0392b;
+  --user-arrow: #2c3e50;
+  --weight-arrow: #2980b9;
+  --accent: #d35400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--accent)
+}
+
+.layout {
+  display: flex;
+  align-items: stretch;
+}
+
+#addForce {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  justify-self: end;  
+}
+
+.canvas-container {
+  width: 300px;
+  min-height: 400px;
+}
+
+.ui-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.top-controls label,
+.top-controls button {
+  font-size: 0.9rem;
+}
+
+#forcesUI {
+  display: grid;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.force-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #ccc;
+}
+
+.force-item div {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.force-item button {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.results p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+canvas {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.beam-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr)) auto;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.left-panel {
+  width: 680px;
+  display: left;
+  align-content: center;
+}
+
+.right-panel {
+  width: 400px;
+  padding-left: 20px;
+}

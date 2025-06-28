@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Viga</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Diagrama de Cuerpo Libre Sujeto a 2 Fuerzas</h1>
+    <main class="layout">
+        <div class="left-panel">
+            <div class="beam-controls">
+                <label>Proyeccion x (m):
+                    <input id="beamLength" type="number" value="2" min="0.1" step="0.1">
+                </label>
+                <label>Peso viga (N):
+                    <input id="weight" type="number" value="0" min="0" step="1">
+                </label>
+                <label>Ángulo (°):
+                    <input id="angle" type="number" value="0" min="-360" max="360" step="0.1">
+                </label>
+                <button id="addForce">➕ Añadir Fuerza</button>
+                <fieldset id="momentRef">
+                    <legend>Momento en:</legend>
+                    <label><input name="momentRef" type="radio" value="A" checked> A</label>
+                    <label><input name="momentRef" type="radio" value="B"> B</label>
+                </fieldset>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="cv" width="680" height="400"></canvas>
+            </div>
+        </div>
+
+        <aside class="right-panel">
+            <h2>Fuerzas aplicadas</h2>
+            <div id="forcesUI"></div>
+            <br>
+            <h2>Reacciones</h2>
+            <div class="results">
+                <p>Ax = <span id="Ax">0.00</span> N</p>
+                <p>Ay = <span id="Ay">0.00</span> N</p>
+                <p>By = <span id="By">0.00</span> N</p>
+                <p>Momento = <span id="M">0.00</span> N·m</p>
+                <p>Distancia A → B = <input id="L_AB_Input" type="number" step="0.01" min="0" value="0.00"> m</p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
